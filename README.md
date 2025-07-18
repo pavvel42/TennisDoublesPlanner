@@ -1,3 +1,7 @@
+[![AI Assisted](https://img.shields.io/badge/AI-Assisted-blue?style=for-the-badge&logo=openai)](./AI_POLICY.md) [![Built with Gemini](https://img.shields.io/badge/Built%20with-Gemini-4285F4?style=for-the-badge&logo=google-gemini)](https://gemini.google.com/)
+
+Poniżej znajduje się moja implementacja rozwiązania problemu [TennisDoublesPlanner](https://github.com/Kagroth/TennisDoublesPlanner).
+
 # Planer Turnieju Tenisa Deblowego
 
 To repozytorium zawiera zaawansowane rozwiązanie problemu planowania turnieju tenisa deblowego dla zmiennej liczby graczy (`n >= 4`), oparte na **Programowaniu w Oparciu o Ograniczenia (Constraint Programming - CP)** przy użyciu biblioteki **Google OR-Tools**. Celem jest wygenerowanie sprawiedliwego, zrównoważonego i wolnego od błędów harmonogramu.
