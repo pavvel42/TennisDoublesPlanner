@@ -13,7 +13,9 @@ To repozytorium zawiera zaawansowane rozwiązanie problemu planowania turnieju t
 Głównym wyzwaniem jest stworzenie harmonogramu dla `n` graczy na jednym korcie. Problem ten jest wariantem znanego w informatyce **Problemu Społecznego Golfisty (SGP)**, który należy do klasy problemów **NP-trudnych**. Oznacza to, że złożoność obliczeniowa rośnie wykładniczo wraz z liczbą graczy.
 
 Liczba sposobów na wybranie 4 graczy do jednego meczu z puli `n` graczy jest określona przez współczynnik dwumianowy:
-$$ C(n, 4) = \frac{n!}{4!(n-4)!} = \frac{n(n-1)(n-2)(n-3)}{24} $$
+```math
+C(n, 4) = \frac{n!}{4!(n-4)!} = \frac{n(n-1)(n-2)(n-3)}{24}
+```
 Dla `n=20` graczy, istnieje `C(20, 4) = 4845` możliwych kombinacji czteroosobowych grup, co ilustruje skalę problemu. Model musi przeszukać tę przestrzeń, spełniając jednocześnie kluczowe ograniczenia kombinatoryczne.
 
 ### Kluczowe Ograniczenia
@@ -49,20 +51,32 @@ Niech \( P = \{1, 2, ..., n\} \) będzie zbiorem graczy, a \( M \) zbiorem poten
 **2. Ograniczenia Modelu:**
 
 *   **Liczba Graczy w Meczu**: W każdym meczu musi brać udział dokładnie 4 graczy.
-    $$ \forall m \in M: \sum_{p \in P} x_{pm} = 4 $$
+    ```math
+    \forall m \in M: \sum_{p \in P} x_{pm} = 4
+    ```
 *   **Liczba Drużyn w Meczu**: W każdym meczu muszą być dokładnie 2 drużyny.
-    $$ \forall m \in M: \sum_{p_1, p_2 \in P, p_1 < p_2} y_{p_1 p_2 m} = 2 $$
+    ```math
+    \forall m \in M: \sum_{p_1, p_2 \in P, p_1 < p_2} y_{p_1 p_2 m} = 2
+    ```
 *   **Integralność Harmonogramu i Drużyn**: Gracz uczestniczy w meczu wtedy i tylko wtedy, gdy jest częścią jednej z drużyn w tym meczu.
-    $$ \forall p \in P, \forall m \in M: x_{pm} = \sum_{p' \in P, p' \neq p} y_{\min(p, p'), \max(p, p') m} $$
+    ```math
+    \forall p \in P, \forall m \in M: x_{pm} = \sum_{p' \in P, p' \neq p} y_{\min(p, p'), \max(p, p') m}
+    ```
 *   **Unikalność Drużyn (Warunek SGP)**: Każda para graczy może tworzyć drużynę co najwyżej raz.
-    $$ \forall p_1, p_2 \in P, p_1 < p_2: \sum_{m \in M} y_{p_1 p_2 m} \leq 1 $$
+    ```math
+    \forall p_1, p_2 \in P, p_1 < p_2: \sum_{m \in M} y_{p_1 p_2 m} \leq 1
+    ```
 *   **Sprawiedliwa Rotacja**: Różnica między maksymalną a minimalną liczbą rozegranych meczów przez dowolnego gracza jest ograniczona do 1. Niech \( G_p = \sum_{m \in M} x_{pm} \) będzie liczbą gier gracza \(p\).
-    $$ \max_{p \in P}(G_p) - \min_{p \in P}(G_p) \leq 1 $$
+    ```math
+    \max_{p \in P}(G_p) - \min_{p \in P}(G_p) \leq 1
+    ```
 
 **3. Funkcja Celu:**
 
 Celem jest maksymalizacja całkowitej liczby gier rozegranych w turnieju, co prowadzi do jak najpełniejszego harmonogramu.
-$$ \text{maximize} \sum_{p \in P} \sum_{m \in M} x_{pm} $$
+```math
+\text{maximize} \sum_{p \in P} \sum_{m \in M} x_{pm}
+```
 
 ---
 
