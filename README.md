@@ -66,7 +66,7 @@ Niech $`P = {1, 2, ..., n}`$ będzie zbiorem graczy, a $`M`$ zbiorem potencjalny
     ```math
     \forall p_1, p_2 \in P, p_1 < p_2: \sum_{m \in M} y_{p_1 p_2 m} \leq 1
     ```
-*   **Sprawiedliwa Rotacja**: Różnica między maksymalną a minimalną liczbą rozegranych meczów przez dowolnego gracza jest ograniczona do 1. Niech $`G_p = \sum_{m \in M} x_{pm}`$ będzie liczbą gier gracza $`p`$.
+*   **Sprawiedliwa Rotacja**: Różnica między maksymalną a minimalną liczbą rozegranych meczów przez dowolnego gracza jest ograniczona do 1. Niech \( G_p = \sum_{m \in M} x_{pm} \) będzie liczbą gier gracza \(p\).
     ```math
     \max_{p \in P}(G_p) - \min_{p \in P}(G_p) \leq 1
     ```
