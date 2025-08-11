@@ -106,5 +106,3 @@ Skrypt generuje:
 *   **Wizualizacje Graficzne**:
     1.  **Graf Harmonogramu**: Pokazuje, kto z kim grał w poszczególnych meczach.
     2.  **Mapy Ciepła**: Ilustrują częstotliwość tworzenia par (partnerów) i grania przeciwko sobie (przeciwników).
-
-```
