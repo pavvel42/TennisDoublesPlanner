@@ -1,12 +1,11 @@
-
-
 import random
 
 # --- Pula dostępnych imion ---
 AVAILABLE_NAMES = [
     "Adam", "Barbara", "Czesław", "Daria", "Eugeniusz", "Felicja", 
     "Grzegorz", "Hanna", "Igor", "Joanna", "Krzysztof", "Laura",
-    "Marek", "Natalia", "Oskar", "Patrycja"
+    "Marek", "Natalia", "Oskar", "Patrycja", "Robert", "Stanisław",
+    "Tomasz", "Zofia"
 ]
 
 class TennisConfiguration:
@@ -22,11 +21,19 @@ class TennisConfiguration:
         """
         if num_players < 4:
             raise ValueError("Liczba graczy musi wynosić co najmniej 4.")
-        if num_players > len(AVAILABLE_NAMES):
-            raise ValueError(f"Liczba graczy nie może przekroczyć {len(AVAILABLE_NAMES)}.")
 
         self.N = num_players
-        self.PLAYERS = set(random.sample(AVAILABLE_NAMES, self.N))
+        
+        players_set = set()
+        if num_players <= len(AVAILABLE_NAMES):
+            players_set = set(random.sample(AVAILABLE_NAMES, self.N))
+        else:
+            players_set = set(AVAILABLE_NAMES)
+            num_to_generate = num_players - len(AVAILABLE_NAMES)
+            for i in range(num_to_generate):
+                players_set.add(f"Player_{len(AVAILABLE_NAMES) + i + 1}")
+
+        self.PLAYERS = players_set
         
         # Zgeneralizowane zasady gry
         self.MATCHES_COUNT = self.N
