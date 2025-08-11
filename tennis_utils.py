@@ -1,4 +1,3 @@
-
 import itertools
 
 def is_match_valid(config, match):
