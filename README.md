@@ -41,12 +41,12 @@ W celu zapewnienia maksymalnej elastyczności, skrypt został wyposażony w mech
 
 ### Architektura Modelu Matematycznego
 
-Niech \( P = \{1, 2, ..., n\} \) będzie zbiorem graczy, a \( M \) zbiorem potencjalnych meczów.
+Niech $ P = \{1, 2, ..., n\} $ będzie zbiorem graczy, a $ M $ zbiorem potencjalnych meczów.
 
 **1. Zmienne Decyzyjne:**
 
-*   \( x_{pm} \in \{0, 1\} \): Zmienna binarna przyjmująca wartość 1, jeśli gracz \( p \in P \) uczestniczy w meczu \( m \in M \), w przeciwnym razie 0.
-*   \( y_{p_1 p_2 m} \in \{0, 1\} \): Zmienna binarna przyjmująca wartość 1, jeśli gracze \( p_1, p_2 \in P \) (gdzie \(p_1 < p_2\)) tworzą drużynę w meczu \( m \in M \), w przeciwnym razie 0.
+*   $ x_{pm} \in \{0, 1\} $: Zmienna binarna przyjmująca wartość 1, jeśli gracz $ p \in P $ uczestniczy w meczu $ m \in M $, w przeciwnym razie 0.
+*   $ y_{p_1 p_2 m} \in \{0, 1\} $: Zmienna binarna przyjmująca wartość 1, jeśli gracze $ p_1, p_2 \in P $ (gdzie $p_1 < p_2$) tworzą drużynę w meczu $ m \in M $, w przeciwnym razie 0.
 
 **2. Ograniczenia Modelu:**
 
@@ -66,7 +66,7 @@ Niech \( P = \{1, 2, ..., n\} \) będzie zbiorem graczy, a \( M \) zbiorem poten
     ```math
     \forall p_1, p_2 \in P, p_1 < p_2: \sum_{m \in M} y_{p_1 p_2 m} \leq 1
     ```
-*   **Sprawiedliwa Rotacja**: Różnica między maksymalną a minimalną liczbą rozegranych meczów przez dowolnego gracza jest ograniczona do 1. Niech \( G_p = \sum_{m \in M} x_{pm} \) będzie liczbą gier gracza \(p\).
+*   **Sprawiedliwa Rotacja**: Różnica między maksymalną a minimalną liczbą rozegranych meczów przez dowolnego gracza jest ograniczona do 1. Niech $ G_p = \sum_{m \in M} x_{pm} $ będzie liczbą gier gracza $p$.
     ```math
     \max_{p \in P}(G_p) - \min_{p \in P}(G_p) \leq 1
     ```
@@ -106,3 +106,5 @@ Skrypt generuje:
 *   **Wizualizacje Graficzne**:
     1.  **Graf Harmonogramu**: Pokazuje, kto z kim grał w poszczególnych meczach.
     2.  **Mapy Ciepła**: Ilustrują częstotliwość tworzenia par (partnerów) i grania przeciwko sobie (przeciwników).
+
+```
